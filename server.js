@@ -1,12 +1,17 @@
 const express = require('express');
-const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(express.static('client/build'));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+app.get('/', (req, res) => {
+  res.send('get request working');
+});
+
+app.post('/', function(req, res) {
+  var email = req.body.email;
+  console.log(email);
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
