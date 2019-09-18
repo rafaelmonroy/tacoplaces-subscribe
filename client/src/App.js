@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -10,15 +9,11 @@ import AppFooter from './components/AppFooter';
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <AppNavbar />
-          <Switch>
-            <Route exact path="/" component={AppBody} />
-          </Switch>
-          <AppFooter />
-        </div>
-      </BrowserRouter>
+      <div className="App">
+        <AppNavbar />
+        <AppBody />
+        <AppFooter />
+      </div>
     );
   }
 }

@@ -11,6 +11,7 @@ body {
 }
 
 #coming {
+  color: #ec0202;
   font-size: 5vw;
   text-shadow: 1px 1px #000;
   margin-top: 0px;
@@ -40,6 +41,23 @@ body {
 
 a.navbar-brand {
   color: #fff;
+}
+
+#info {
+  font-size: 20px;
+  text-shadow: 1px 1px #000;
+  margin-top: 0px;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.info-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.AppBody {
+  overflow: scroll;
 }
 
 .AppFooter {
@@ -87,4 +105,10 @@ a.navbar-brand {
 
 .form-control {
   border-radius: 0;
+}
+
+@media only screen and (max-height: 480px) {
+  body {
+    height: fit-content;
+  }
 }

@@ -1,24 +1,17 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import FillOutForm from './FillOutForm';
+import ThankYou from './ThankYou';
 
 class AppForm extends React.Component {
   render() {
     return (
-      <form action="/" class="form-signin" method="post">
-        <input
-          type="email"
-          name="email"
-          class="form-control"
-          placeholder="Email Address"
-          required
-        />
-        <button id="sign-up-btn" class="btn btn-lg btn-block" type="submit">
-          Sign Up
-        </button>
-        <br />
-        <p id="sign-up-text">
-          Sign up to be notified when TacoPlaces Web App Launches!
-        </p>
-      </form>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/thankyou" component={ThankYou} />
+          <Route exact path="/" component={FillOutForm} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }

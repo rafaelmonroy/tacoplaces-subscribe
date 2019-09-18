@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
   res.send('get request working');
 });
 
-app.post('/', function(req, res) {
+app.post('/', (req, res) => {
   var email = req.body.email;
 
   console.log(email);
@@ -37,6 +37,9 @@ app.post('/', function(req, res) {
   })
     .then(e => {
       console.log(e.status);
+      if (e.status === 200) {
+        res.redirect('/thankyou');
+      }
     })
     .catch(() => {
       console.log('fetch error');
